@@ -147,7 +147,7 @@ h2 {
 .month-navigation {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos entre los dos extremos */
-    align-items: center; /* Alinea verticalmente los elementos */
+    align-items: center; /* Alinea verticalmene los elementos */
     margin-top: 20px;
     width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
