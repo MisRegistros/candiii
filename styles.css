@@ -23,9 +23,18 @@ body {
 
 h1 {
     text-align: center;
-    color: #fff;
+    color: #007BFF; /* Color azul */
     margin-bottom: 5px;
+    font-size: 2em; /* Tamaño de fuente más grande */
 }
+
+.center {
+    text-align: center;
+    color: #fff; /* Color blanco */
+    margin-bottom: 20px;
+    font-size: 1.5em; /* Mantener el mismo tamaño de fuente */
+}
+
 
 .center {
     text-align: center;
@@ -120,10 +129,6 @@ h1 {
     align-items: center; /* Centra los iconos verticalmente */
 }
 
-h2 {
-    margin-bottom: 20px; /* Añadido margen para separar el título de los datos */
-    color: white; /* Título en blanco */
-}
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
