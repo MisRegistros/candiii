@@ -2,7 +2,7 @@
 
 // Textos para cada día
 const textos = {
-    1: "El primer manwha que leí y me enamoró hace muchísimos años, fue el primer manhwa en tener su adaptación al anime y encima su OP es de Stray Kids, así que cada vez que lo veía me acordaba de ti. Me hacía ilusión regalártelo para que lo guardases con cariño. Además puedes leerlo o directamente pasar a probar el anime conmigo <3",
+    1: "El primer manwha que leí y me enamoró hace muchísimos años, fue el primer manhwa en tener su adaptación al anime y encima su OP es de Stray Kids, así que cada vez que lo veía me acordaba de ti. <br><br> Me hacía ilusión regalártelo para que lo guardases con cariño. Además puedes leerlo o directamente pasar a probar el anime conmigo <3",
     2: "Bueno, este mini Gojito en su día lo compré para mi pero me vino con la cajita rota.. Y a mi los funkos y estos muñequitos me gusta coleccionarlos con su cajita en buen estado, así que pensé en aprovechar que te iba a mandar un regalito y dártelo a ti, siento que no sea la figura pingona que tanto te gustó, pero se me iba el presupuesto y ya bastante sufrí ya con las aduanas xDD",
     3: "¿Sabes quien es el osito? ¡Es Monokuma! Me encanta su diseño desde siempre y suelo usarlo de avatar, es un peluchillo un poco cutre pero era barato y quería dártelo para que tengas algo que abrazar si te da la ansiedad y Jose no está a mano. ¿Has jugado Danganronpa? Si no lo has hecho creo que te gustará, aunque es una novela visual y tiene bastante texto, pero merece la pena.",
     4: "Ya sabes que estaba haciendo mi colección de cartitas Pokémon y Jujutsu Kaisen, cuando te la enseñé me dijiste de broma que te diese mis cartas de Gojo, pues aquí las tienes, y de regalo una de Sukuna xD.",
@@ -17,7 +17,15 @@ function abrirModal(dia) {
     // Mostrar el modal y actualizar el título y texto
     document.getElementById("modal").style.display = "block";
     document.getElementById("modal-dia").textContent = dia;
-    document.getElementById("modal-texto").textContent = textos[dia] || "";
+    
+    // Obtener el texto correspondiente al día
+    const texto = textos[dia] || "";
+    
+    // Reemplazar saltos de línea por <br> para que se muestren correctamente en HTML
+    const textoConSaltos = texto.replace(/\n/g, "<br>");
+    
+    // Usar innerHTML para que las etiquetas HTML como <br> se apliquen correctamente
+    document.getElementById("modal-texto").innerHTML = textoConSaltos;
 
     // Marcar el día como visto y guardar en localStorage
     marcarDiaVisto(dia);

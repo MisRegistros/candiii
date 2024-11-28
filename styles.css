@@ -213,7 +213,7 @@ h1 {
     background-color: green; /* Fondo verde para días vistos */
 }
 
-/* Modal */
+/* Estilos generales para el modal */
 .modal {
     display: none; /* Inicialmente oculto */
     position: fixed;
@@ -226,8 +226,9 @@ h1 {
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
 }
 
+/* Contenido del modal */
 .modal-content {
-    background-color: #333; /* Fondo oscuro para la ventana */
+    background-color: #333; /* Fondo oscuro */
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -237,6 +238,24 @@ h1 {
     position: relative;
 }
 
+/* Estilo del texto dentro del modal */
+#modal-texto {
+    color: #fff; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    line-height: 1.5; /* Espaciado entre líneas */
+    margin-top: 30px; /* Separación desde el título */
+    text-align: left; /* Alineación del texto */
+    white-space: pre-line; /* Mantener saltos de línea */
+    font-family: 'Arial', sans-serif; /* Fuente */
+}
+
+/* Estilo del título del modal */
+.modal-content h2 {
+    color: #fff; /* Color del título */
+    font-size: 20px;
+}
+
+/* Cerrar el modal */
 .close {
     color: #aaa;
     font-size: 28px;
@@ -249,22 +268,7 @@ h1 {
 
 .close:hover,
 .close:focus {
-    color: white; /* Cambia el color a blanco al pasar el ratón */
+    color: white;
     text-decoration: none;
 }
 
-/* Estilo para el texto dentro del modal */
-.modal-content p, .modal-content .modal-texto {
-    color: white; /* Cambiar color del texto a rojo */
-    margin-top: 20px; /* Desplazar el texto hacia abajo */
-    font-size: 1.2em; /* Puedes ajustar el tamaño de la fuente si lo deseas */
-}
-
-
-
-/* Estilo para el contenedor de texto en el modal */
-.modal-texto {
-    white-space: pre-line; /* Los saltos de línea y los espacios adicionales se respetan */
-    color: red; /* Aquí puedes poner el color que desees para el texto */
-    font-size: 1.1em; /* Ajusta el tamaño del texto */
-}
