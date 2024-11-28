@@ -206,7 +206,7 @@ h1 {
 }
 
 .day-no-text {
-    background-color: red; /* Fondo rojo para días sin texto */
+    background-color: green; /* Fondo rojo para días sin texto */
 }
 
 .day-viewed {
