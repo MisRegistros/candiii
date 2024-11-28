@@ -50,60 +50,8 @@ h1 {
     padding: 0 10px;
 }
 
-.day {
-    background-color: #007BFF; /* Cuadrados azules */
-    color: white; /* Texto blanco */
-    padding: 15px;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
 
-.day:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
-}
 
-/* Modal */
-.modal {
-    display: none; /* Inicialmente oculto */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
-}
-
-.modal-content {
-    background-color: #333; /* Fondo oscuro para la ventana */
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Modal más estrecha para móviles */
-    max-width: 500px;
-    border-radius: 8px;
-    position: relative;
-}
-
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: white; /* Cambia el color a blanco al pasar el ratón */
-    text-decoration: none;
-}
 
 /* Aseguramos que la etiqueta y el valor estén alineados correctamente en pantallas pequeñas */
 .data-row {
@@ -239,14 +187,68 @@ h1 {
     }
 }
 
-/* Color de los días con información (verde) */
-.day-con-datos {
-    background-color: green; /* Fondo verde */
+
+
+/* styles.css */
+.day {
+    background-color: #007BFF; /* Cuadrados azules */
     color: white; /* Texto blanco */
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Color de los días sin información (rojo) */
-.day-sin-datos {
-    background-color: red; /* Fondo rojo */
-    color: white; /* Texto blanco */
+.day:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+.day-no-text {
+    background-color: red; /* Fondo rojo para días sin texto */
+}
+
+.day-viewed {
+    background-color: green; /* Fondo verde para días vistos */
+}
+
+/* Modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
+}
+
+.modal-content {
+    background-color: #333; /* Fondo oscuro para la ventana */
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Modal más estrecha para móviles */
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: white; /* Cambia el color a blanco al pasar el ratón */
+    text-decoration: none;
 }

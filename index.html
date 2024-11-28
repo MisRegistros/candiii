@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Los regalitos para mi Candi</h1>
-        <h2 class="center">Cada regalo tiene un número escrito en el envoltorio, abre el regalo y después haz click en el número correspondiente</h2>
-        
-        <div class="calendar">
-            <!-- Generación de los días -->
-            <div class="day" onclick="abrirModal(1)">1</div>
-            <div class="day" onclick="abrirModal(2)">2</div>
-            <div class="day" onclick="abrirModal(3)">3</div>
-            <div class="day" onclick="abrirModal(4)">4</div>
-            <div class="day" onclick="abrirModal(5)">5</div>
-            <div class="day" onclick="abrirModal(6)">6</div>
-            <div class="day" onclick="abrirModal(10)">Navidad A</div>
-            <div class="day" onclick="abrirModal(11)">Navidad B</div>
-        </div>
+<!-- index.html -->
+<div class="container">
+    <h1>Los regalitos para mi Candi</h1>
+    <h2 class="center">Cada regalo tiene un número escrito en el envoltorio, abre el regalo y después haz click en el número correspondiente</h2>
+    <div class="calendar">
+        <div class="day" data-dia="1" onclick="abrirModal(1)">1</div>
+        <div class="day" data-dia="2" onclick="abrirModal(2)">2</div>
+        <div class="day" data-dia="3" onclick="abrirModal(3)">3</div>
+        <div class="day" data-dia="4" onclick="abrirModal(4)">4</div>
+        <div class="day" data-dia="5" onclick="abrirModal(5)">5</div>
+        <div class="day" data-dia="6" onclick="abrirModal(6)">6</div>
+        <div class="day" data-dia="10" onclick="abrirModal(10)">10</div>
+        <div class="day" data-dia="11" onclick="abrirModal(11)">11</div>
+    </div>
+</div>
+
+<!-- Modal --
+
 
         <!-- Modal para mostrar los detalles -->
         <div id="modal" class="modal">
@@ -31,7 +34,7 @@
                 <p id="modal-texto"></p>
             </div>
         </div>
-    </div>
+
 
     <script src="script.js"></script>
 </body>

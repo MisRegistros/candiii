@@ -17,10 +17,45 @@ function abrirModal(dia) {
     // Mostrar el modal y actualizar el título y texto
     document.getElementById("modal").style.display = "block";
     document.getElementById("modal-dia").textContent = dia;
-    document.getElementById("modal-texto").textContent = textos[dia] || "No hay texto disponible para este día.";
+    document.getElementById("modal-texto").textContent = textos[dia] || "";
+
+    // Marcar el día como visto y guardar en localStorage
+    marcarDiaVisto(dia);
 }
 
 // Función para cerrar el modal
 function cerrarModal() {
     document.getElementById("modal").style.display = "none";
 }
+
+// Función para marcar el día como visto
+function marcarDiaVisto(dia) {
+    const dayElement = document.querySelector(`.day[data-dia="${dia}"]`);
+    dayElement.classList.add('day-viewed');
+
+    // Guardar en localStorage
+    const vistos = JSON.parse(localStorage.getItem('vistos') || '[]');
+    if (!vistos.includes(dia)) {
+        vistos.push(dia);
+        localStorage.setItem('vistos', JSON.stringify(vistos));
+    }
+}
+
+// Función para inicializar los días del calendario
+function inicializarCalendario() {
+    const vistos = JSON.parse(localStorage.getItem('vistos') || '[]');
+
+    document.querySelectorAll('.day').forEach(dayElement => {
+        const dia = dayElement.dataset.dia;
+        if (textos[dia] === "") {
+            dayElement.classList.add('day-no-text');
+        } else if (vistos.includes(parseInt(dia))) {
+            dayElement.classList.add('day-viewed');
+        }
+    });
+}
+
+// Inicializar el calendario al cargar la página
+window.onload = function() {
+    inicializarCalendario();
+};
