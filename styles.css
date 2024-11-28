@@ -24,23 +24,18 @@ body {
 h1 {
     text-align: center;
     color: #007BFF; /* Color azul */
-    margin-bottom: 5px;
+    margin-bottom: 35px;
     font-size: 2em; /* Tamaño de fuente más grande */
 }
 
-.center {
-    text-align: center;
-    color: #fff; /* Color blanco */
-    margin-bottom: 20px;
-    font-size: 1.5em; /* Mantener el mismo tamaño de fuente */
-}
 
 
 .center {
     text-align: center;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
+
 
 .calendar {
     display: grid;
