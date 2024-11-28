@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalitos de mi Candi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Los regalitos para mi candi</h1>
+        <h2 class="center">Cada regalo tiene un número escrito en el envoltorio, abre el regalo y después haz click en el número correspondiente</h2>
+        
+        <div class="calendar">
+            <!-- Generación de los días -->
+            <div class="day" onclick="abrirModal(1)">1</div>
+            <div class="day" onclick="abrirModal(2)">2</div>
+            <div class="day" onclick="abrirModal(3)">3</div>
+            <div class="day" onclick="abrirModal(4)">4</div>
+            <div class="day" onclick="abrirModal(5)">5</div>
+            <div class="day" onclick="abrirModal(6)">6</div>
+            <div class="day" onclick="abrirModal(10)">Navidad A</div>
+            <div class="day" onclick="abrirModal(11)">Navidad B</div>
+        </div>
+
+        <!-- Modal para mostrar los detalles -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <h2>Detalles del Día <span id="modal-dia">1</span></h2>
+                <p id="modal-texto"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
