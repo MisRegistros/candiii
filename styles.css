@@ -1,45 +1,64 @@
 /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
 .container {
-    width: 80%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    background-color: #1a1a1a; /* Fondo oscuro para la caja principal */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Sombra suave */
     border-radius: 8px;
 }
 
-h1, h2 {
+h1 {
     text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
 }
 
 .center {
     text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .calendar {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 20px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas para móviles */
+    gap: 5px;
+    margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 .day {
-    padding: 20px;
-    background-color: #e0e0e0;
+    background-color: #007BFF; /* Cuadrados azules */
+    color: white; /* Texto blanco */
+    padding: 15px;
     text-align: center;
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+.day:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Modal */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none; /* Inicialmente oculto */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -47,29 +66,182 @@ h1, h2 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro translúcido */
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
+    background-color: #333; /* Fondo oscuro para la ventana */
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 80%; /* Modal más estrecha para móviles */
+    max-width: 500px;
     border-radius: 8px;
+    position: relative;
 }
 
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: white; /* Cambia el color a blanco al pasar el ratón */
     text-decoration: none;
-    cursor: pointer;
+}
+
+/* Aseguramos que la etiqueta y el valor estén alineados correctamente en pantallas pequeñas */
+.data-row {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-bottom: 15px; /* Separación entre las filas */
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 10px; /* Un margen para separar la etiqueta del valor */
+    flex-basis: auto; /* Ajuste automático para que no ocupe más espacio del necesario */
+    white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.value {
+    flex-basis: 60%; /* Asegura que el valor ocupe el espacio disponible */
+    color: #fff; /* Texto blanco */
+    text-align: right; /* Alinea el texto del valor a la derecha */
+    display: flex;
+    align-items: center; /* Centra los iconos verticalmente */
+}
+
+h2 {
+    margin-bottom: 20px; /* Añadido margen para separar el título de los datos */
+    color: white; /* Título en blanco */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para móviles */
+        justify-content: center;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .close {
+        font-size: 25px;
+        right: 10px;
+        top: 5px;
+    }
+}
+
+/* Estilos generales para la flecha de navegación */
+.month-navigation {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos entre los dos extremos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-top: 20px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.previous-month, .next-month {
+    display: flex;
+    align-items: center; /* Asegura que el texto y la flecha estén alineados verticalmente */
+}
+
+.arrow-link {
+    color: #007BFF; /* Flecha azul */
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 10px; /* Un poco de espacio entre el texto del mes y la flecha */
+}
+
+.arrow-link:hover {
+    text-decoration: underline;
+}
+
+.previous-month span, .next-month span {
+    font-size: 18px;
+    color: white; /* Texto blanco */
+    margin-right: 5px;
+}
+
+/* Estilos para los iconos de "Sí" o "No" */
+.checkmark {
+    color: green; /* Color verde para el check */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cross {
+    color: red; /* Color rojo para la cruz */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos generales */
+.data-row {
+    display: flex;
+    justify-content: space-between; /* Alinea la etiqueta a la izquierda y el valor a la derecha */
+    margin-bottom: 20px; /* Separación más grande entre las filas */
+    align-items: center;
+}
+
+/* Estilo de las etiquetas */
+.label {
+    font-weight: bold;
+    margin-right: 10px; /* Separación entre la etiqueta y el valor */
+    flex-basis: 40%; /* Ajusta el espacio que ocupa la etiqueta */
+    text-align: left; /* Alinea el texto de la etiqueta a la izquierda */
+}
+
+/* Estilo de los valores */
+.value {
+    flex-basis: 60%;
+    color: #fff; /* Texto blanco */
+    text-align: right; /* Alinea el texto de los valores a la derecha */
+    display: flex;
+    align-items: center; /* Centra verticalmente los iconos */
+}
+
+/* Asegurarnos de que las etiquetas no se corten */
+@media (max-width: 768px) {
+    .data-row {
+        flex-direction: row; /* Mantiene la alineación en una fila (no columna) */
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .label {
+        font-size: 16px; /* Reducir el tamaño de la fuente en móviles */
+        margin-right: 0; /* Elimina el margen derecho */
+        text-align: left; /* Asegura que el texto quede a la izquierda */
+        flex-basis: 40%;
+    }
+
+    .value {
+        font-size: 18px; /* Reducir tamaño de los valores en móviles */
+        text-align: right; /* Mantiene el texto a la derecha */
+        flex-basis: 60%;
+    }
+}
+
+/* Color de los días con información (verde) */
+.day-con-datos {
+    background-color: green; /* Fondo verde */
+    color: white; /* Texto blanco */
+}
+
+/* Color de los días sin información (rojo) */
+.day-sin-datos {
+    background-color: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
 }
