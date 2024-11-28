@@ -9,7 +9,7 @@ const textos = {
     5: "555",
     6: "6666",
     10: "aaa",
-    11: "bbb"
+    11: ""
 };
 
 // Función para abrir el modal
