@@ -252,3 +252,19 @@ h1 {
     color: white; /* Cambia el color a blanco al pasar el ratón */
     text-decoration: none;
 }
+
+/* Estilo para el texto dentro del modal */
+.modal-content p, .modal-content .modal-texto {
+    color: white; /* Cambiar color del texto a rojo */
+    margin-top: 20px; /* Desplazar el texto hacia abajo */
+    font-size: 1.2em; /* Puedes ajustar el tamaño de la fuente si lo deseas */
+}
+
+
+
+/* Estilo para el contenedor de texto en el modal */
+.modal-texto {
+    white-space: pre-line; /* Los saltos de línea y los espacios adicionales se respetan */
+    color: red; /* Aquí puedes poner el color que desees para el texto */
+    font-size: 1.1em; /* Ajusta el tamaño del texto */
+}
