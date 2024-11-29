@@ -5,8 +5,8 @@ const textos = {
     4: "Ya sabes que estaba haciendo mi colección de cartitas Pokémon y Jujutsu Kaisen, cuando te la enseñé me dijiste de broma que te diese mis cartas de Gojo, pues aquí las tienes, y de regalo una de Sukuna xD.",
     5: "Un pequeño expositor para una de tus cartitas ^^ queda bastante bonito",
     6: "Ayyy, esta niña golosita ¿Cómo no iba a mandarte unas chuches? Guárdalas y cuando ganemos una partida del Fortnite las abres para celebrarlo xDD",
-    "Navidad A": "Te gustan los juegos de cartas, adoras los gatitos y te encantan las explosiones, lo saben bien las gasolineras del Fortnite... xDD. <br><br> Tenías que tener este juego, se aprende en 5 minutos y está entretenido, pruébalo con la familia en navidad ^^",
-    "Navidad B": "Que tiempos, ¿Verdad? Hace ya tantos años que nos conocímos llevando los nicks de Hina y Hitsu... <br><br> Conocerte fue una de las cosas más importantes de mi vida, espero que te guste este recuerdo tanto como a mí"
+    "<br>Navidad A": "Te gustan los juegos de cartas, adoras los gatitos y te encantan las explosiones, lo saben bien las gasolineras del Fortnite... xDD. <br><br> Tenías que tener este juego, se aprende en 5 minutos y está entretenido, pruébalo con la familia en navidad ^^",
+    "<br>Navidad B": "Que tiempos, ¿Verdad? Hace ya tantos años que nos conocímos llevando los nicks de Hina y Hitsu... <br><br> Conocerte fue una de las cosas más importantes de mi vida, espero que te guste este recuerdo tanto como a mí"
 };
 
 // Función para abrir el modal
