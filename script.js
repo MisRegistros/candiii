@@ -11,6 +11,7 @@ const textos = {
 
 // Función para abrir el modal
 function abrirModal(dia) {
+    const hoy = new Date();
     const diaActual = hoy.getDate();
     const mesActual = hoy.getMonth() + 1; // Los meses en JavaScript son base 0, por lo que enero es 0 y diciembre es 11
 
