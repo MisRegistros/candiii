@@ -1,6 +1,3 @@
-// script.js
-
-// Textos para cada día
 const textos = {
     1: "El primer manwha que leí y me enamoró hace muchísimos años, fue el primer manhwa en tener su adaptación al anime y encima su OP es de Stray Kids, así que cada vez que lo veía me acordaba de ti. <br><br> Me hacía ilusión regalártelo para que lo guardases con cariño. Además puedes leerlo o directamente pasar a probar el anime conmigo <3",
     2: "Bueno, este mini Gojito en su día lo compré para mi pero me vino con la cajita rota.. Y a mi los funkos y estos muñequitos me gusta coleccionarlos con su cajita en buen estado, así que pensé en aprovechar que te iba a mandar un regalito y dártelo a ti. <br><br>  Siento que no sea la figura pingona que tanto te gustó, pero se me iba el presupuesto y ya bastante sufrí ya con las aduanas xDD",
@@ -14,6 +11,18 @@ const textos = {
 
 // Función para abrir el modal
 function abrirModal(dia) {
+    const diaActual = hoy.getDate();
+    const mesActual = hoy.getMonth() + 1; // Los meses en JavaScript son base 0, por lo que enero es 0 y diciembre es 11
+
+    if (mesActual < 12 || (mesActual === 12 && diaActual < 25)) {
+        // Si la fecha es antes del 25 de diciembre
+        if (dia === "Navidad A" || dia === "Navidad B") {
+            // Mostrar el modal de advertencia
+            document.getElementById("warning-modal").style.display = "block";
+            return; // No abrir el modal principal
+        }
+    }
+
     // Mostrar el modal y actualizar el título y texto
     document.getElementById("modal").style.display = "block";
     document.getElementById("modal-dia").textContent = dia;
@@ -31,9 +40,14 @@ function abrirModal(dia) {
     marcarDiaVisto(dia);
 }
 
-// Función para cerrar el modal
+// Función para cerrar el modal principal
 function cerrarModal() {
     document.getElementById("modal").style.display = "none";
+}
+
+// Función para cerrar el modal de advertencia
+function cerrarWarningModal() {
+    document.getElementById("warning-modal").style.display = "none";
 }
 
 // Función para marcar el día como visto
@@ -57,7 +71,7 @@ function inicializarCalendario() {
         const dia = dayElement.dataset.dia;
         if (textos[dia] === "") {
             dayElement.classList.add('day-no-text');
-        } else if (vistos.includes(parseInt(dia))) {
+        } else if (vistos.includes(dia)) {
             dayElement.classList.add('day-viewed');
         }
     });
@@ -67,6 +81,7 @@ function inicializarCalendario() {
 window.onload = function() {
     inicializarCalendario();
 };
+
 
 
     // Reemplazar saltos de línea (\n) por <br> para permitir que se muestren en el HTML

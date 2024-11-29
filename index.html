@@ -26,14 +26,23 @@
 <!-- Modal --
 
 
-        <!-- Modal para mostrar los detalles -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="cerrarModal()">&times;</span>
-                <h2>&#10084;&#65039; Detalles del regalito <span id="modal-dia"></span> &#10084;&#65039; </h2>
-                <p id="modal-texto"></p>
-            </div>
-        </div>
+<!-- Modal de advertencia (para Navidad A y B) -->
+<div id="warning-modal" class="modal warning-modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarWarningModal()">&times;</span>
+        <h2>¡Este regalo solo se puede abrir a partir del 25 de diciembre!</h2>
+    </div>
+</div>
+
+<!-- Modal para mostrar los detalles -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h2>Detalles del regalito <span id="modal-dia"></span> ^^ </h2>
+        <p id="modal-texto"></p>
+    </div>
+</div>
+
 
 
     <script src="script.js"></script>
